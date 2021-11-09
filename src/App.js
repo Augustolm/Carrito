@@ -2,7 +2,8 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/Container/ItemListContainer'
+import ItemListContainer from './components/Container/itemListContainer'
+
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <NavBar />
       <ItemListContainer greeting = 'Bienvenidos a tu tienda Online'/>
+     
     </div>
 
   );
