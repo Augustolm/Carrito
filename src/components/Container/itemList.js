@@ -1,5 +1,6 @@
 import Item from './items'
 
+
 const ItemList  = ({products}) => {
     console.log('products en itemList', products)
     return(
@@ -14,6 +15,7 @@ const ItemList  = ({products}) => {
                 price = {product.price}
                 stock = {product.stock}
                 title = {product.title}
+                initials = {product.initials}
                 />
                 )
                 

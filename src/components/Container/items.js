@@ -1,4 +1,6 @@
-const Item = ({descripcion, price, stock, title})=> {
+import ItemCount from "./itemCount"
+
+const Item = ({descripcion, price, stock, title, initials})=> {
     
 
     return(
@@ -6,7 +8,8 @@ const Item = ({descripcion, price, stock, title})=> {
             <h3>{title}</h3>
             <h2>{price}</h2>
             <p>{descripcion}</p>
-            <p>{stock}</p>
+            
+            <ItemCount stock={stock} initials={initials}/>
         </div>
     )
 }
