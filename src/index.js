@@ -15,9 +15,9 @@ ReactDOM.render(
     <Routes>
 
       <Route path="/" element={ <App />} />
-      <Route path="/productos" element={ <Product />} />
+      <Route path="/producto/:id" element={ <Product />} />
       <Route path="/nosotros" element={ <Nosotros />} />
-      
+       
     </Routes>
   </React.StrictMode>
   </BrowserRouter>,

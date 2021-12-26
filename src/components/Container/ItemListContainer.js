@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCount from './itemCount';
+//import ItemCount from './itemCount';
 import { useState, useEffect } from 'react';
 import getProducts from './services/handMadePromis';
 import ItemList from './itemList';

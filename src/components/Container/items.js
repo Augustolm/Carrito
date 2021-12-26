@@ -6,8 +6,8 @@ const Item = ({descripcion, price, stock, title, initials, image, id})=> {
    
   
     return(
-        <div id={id} className="borderCard" >
-            <Link to = "/productos" >
+        <div  className="borderCard" >
+            <Link to = {`/producto/${id}`} >
             <img src={image} className="imagen"></img>
             <h3>{title}</h3>
             <h2>{price}</h2>
