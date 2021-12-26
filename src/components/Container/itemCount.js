@@ -33,7 +33,7 @@ const ItemCount = ( {stock, initials} ) => {
 
     return (
         <div>
-            <h1> { count } </h1>
+            <h4> Agregar: { count } </h4>
             <Button  onClick= { addItem } variant="contained" color="primary">
               +1 
             </Button>

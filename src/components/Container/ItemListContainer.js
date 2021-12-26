@@ -19,9 +19,9 @@ const ItemListContainer = ( {greeting} ) => {
     },[]);
 
     return (
-        <div>
+        <div id='Principal' >
             <h1> { greeting } </h1>
-            <ItemCount />
+            
             <ItemList products={products} />
         </div>
     )

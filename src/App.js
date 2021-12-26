@@ -10,7 +10,7 @@ import ItemlistContainer from './components/Container/ItemListContainer'
 function App() {
   return (
 
-    <div className="App">
+    <div className="App"  >
       <NavBar />
       <ItemlistContainer  greeting = 'Bienvenidos a tu tienda Online' />
      
