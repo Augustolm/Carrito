@@ -1,9 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
-import NavBar from "../../NavBar/NavBar";
-import ItemList from '../itemList';
-import Item from "../items";
+
 import getProducts from '../services/handMadePromis';
 
 
@@ -14,8 +12,8 @@ const Product = () => {
     
  
 
-    const {id} = useParams()
-    console.log(id)
+    let {postId} = useParams();
+    console.log(postId)
 
 
     const [products, setProducts] = useState()
@@ -28,20 +26,31 @@ const Product = () => {
             setProducts(res)
             
         }).catch(err => alert('Algo no salio como se esperaba', err))
-    },[id]);
+    },[]);
+
+  
 
 
-      
+    const p = products.find(products => products.id == postId);
 
-
+    console.log(p)
 
     return(
-        <>
-        <h1></h1>
+        <div>
+                 <h1>Usted selecciono</h1>
+                
+                 <img src={p.image} className="imagen"></img>
+                <span>{p.descripcion}</span> 
+                <h4>Precio: {p.price}</h4>
+                <h5>Cantidades diponibles: {p.stock}</h5> 
+                
+            
+
+
         
         <h2>Producto</h2>
         <Link to="/">About</Link>
-        </>
+        </div>
     )
 
     

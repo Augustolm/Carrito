@@ -16,7 +16,7 @@ function App() {
       <NavBar />
       <ItemlistContainer  greeting = 'Bienvenidos a tu tienda Online' />
     
-      <Link to = "/productos/:id">Productos</Link> |{" "}
+      <Link to = "/producto/:postId">Productos</Link> |{" "}
       
       <Link to = "/nosotros">Nosotros</Link> 
       

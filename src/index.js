@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -15,7 +14,7 @@ ReactDOM.render(
     <Routes>
 
       <Route path="/" element={ <App />} />
-      <Route path="/producto/:id" element={ <Product />} />
+      <Route path="/producto/:postId" element={ <Product />} />
       <Route path="/nosotros" element={ <Nosotros />} />
        
     </Routes>
