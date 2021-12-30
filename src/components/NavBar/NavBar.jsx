@@ -12,10 +12,13 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-
+import { Link, useParams } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 //import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import ItemCount from '../Container/itemCount';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button, Grid } from '@material-ui/core';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -28,7 +31,7 @@ const Search = styled('div')(({ theme }) => ({
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
+    marginLeft: theme.spacing(8),
     width: 'auto',
   },
 }));
@@ -46,7 +49,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
+    padding: theme.spacing(1, 1,1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
@@ -57,7 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar() {
+export default function NavBar(   ) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -163,7 +166,12 @@ export default function NavBar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Ecommers
+            
+          
+                <Link to="/" className="link">Ecommers</Link>
+            
+                
+
           </Typography>
           <Search>
             <SearchIconWrapper>
@@ -174,10 +182,15 @@ export default function NavBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          
+          <Button variant="contained" color="primary" >
+                <Link to="/nosotros" className="link">Nosotros</Link>
+            
+                </Button>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={ 0 } color="error">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
@@ -193,6 +206,7 @@ export default function NavBar() {
             >
               <AccountCircle />
             </IconButton>
+            
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton

@@ -7,18 +7,26 @@ import { Link } from 'react-router-dom';
 
 
 
+
+
+
 function App() {
   return (
     
      <div className="App"  >
 
 
-      <NavBar />
+      <NavBar   />
+
+     
       <ItemlistContainer  greeting = 'Bienvenidos a tu tienda Online' />
-    
-      <Link to = "/producto/:postId">Productos</Link> |{" "}
       
-      <Link to = "/nosotros">Nosotros</Link> 
+      
+      
+      <Link to = "/nosotros">Nosotros</Link>
+      
+ 
+     
       
 
     </div>

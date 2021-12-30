@@ -3,6 +3,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import getProducts from './services/handMadePromis';
 import ItemList from './itemList';
+import Typography from '@mui/material/Typography'
 
 
 const ItemListContainer = ( {greeting} ) => {
@@ -20,7 +21,8 @@ const ItemListContainer = ( {greeting} ) => {
 
     return (
         <div id='Principal' >
-            <h1> { greeting } </h1>
+            <Typography variant="h2" color="initial" align='center'> { greeting }</Typography>
+           
             
             <ItemList products={products} />
         </div>

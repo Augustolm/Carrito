@@ -24,7 +24,11 @@ const ItemCount = ( {stock, initials} ) => {
         }
     }
 
+    
+
     const onAdd = () => {
+
+        
         const message = `Agregaste ${count} producto`;
         //   Utilizo un condicional ternario (condicional) ? (true) : (false)
         count === 1 ? alert(message) : alert(`${message}s`);
@@ -37,6 +41,7 @@ const ItemCount = ( {stock, initials} ) => {
             <Button  onClick= { addItem } variant="contained" color="primary">
             { count } 
             </Button>
+            
             
             <Button onClick= { quitItem } variant="contained" color="secondary">
               -1 <DeleteIcon color= 'whait'/>

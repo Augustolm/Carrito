@@ -25,15 +25,23 @@ code {
  
  }
 
- .borderCard {
-  border: '1px solid red';
-  box-shadow: 2px 2px 5px #999;
-  border-radius: 0.2rem;
- }
+
 
 .imagen {
   height: 200px;
   width: 200px;
 
 
+}
+
+.link {
+  text-decoration: none;
+ 
+    text-decoration: none;
+    color: inherit;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
 }
