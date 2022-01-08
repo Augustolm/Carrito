@@ -2,7 +2,7 @@ import React from 'react';
 //import { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Button, Grid } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import NavBar from "../../NavBar/NavBar"
 import { data } from '../services/handMadePromis';
 import { Box } from '@mui/material';
@@ -23,6 +23,7 @@ const Product = () => {
     
 
     const p = data.find(o => o.id == postId)
+    
     console.log(p)
 
     

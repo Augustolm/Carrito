@@ -1,3 +1,5 @@
+
+import Categorias from './categorias'
 import Item from './items'
 
 
@@ -5,6 +7,13 @@ import Item from './items'
 const ItemList  = ({products}) => {
     //console.log('products en itemList', products)
     return(
+        <>
+        <div>
+            <Categorias   />
+
+        </div>
+
+
         <div id="Interna" className='card'>
             {products.map(product => {
                 return(
@@ -24,6 +33,8 @@ const ItemList  = ({products}) => {
             })
             }
         </div>
+
+        </>
     )
 }
 

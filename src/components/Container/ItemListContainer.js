@@ -6,6 +6,7 @@ import ItemList from './itemList';
 import Typography from '@mui/material/Typography'
 
 
+
 const ItemListContainer = ( {greeting} ) => {
 
  
@@ -25,6 +26,7 @@ const ItemListContainer = ( {greeting} ) => {
            
             
             <ItemList products={products} />
+           
         </div>
     )
 };

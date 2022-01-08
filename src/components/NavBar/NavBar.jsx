@@ -12,13 +12,13 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 //import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import ItemCount from '../Container/itemCount';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Button, Grid } from '@material-ui/core';
+//import ItemCount from '../Container/itemCount';
+//import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button } from '@material-ui/core';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
