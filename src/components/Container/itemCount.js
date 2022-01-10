@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@material-ui/core';
 
 
-const ItemCount = ( {stock, initials} ) => {
+const ItemCount = ( {stock, initials, id} ) => {
 
   
     //console.log(greeting)
     //handleAdd
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(0)
 
     const addItem = () => {
         const newValue = count + 1;
@@ -24,20 +24,30 @@ const ItemCount = ( {stock, initials} ) => {
         }
     }
 
+    useEffect(() => {
+        localStorage.setItem('Cantaidad', JSON.stringify( {count, id} ))
+    }, [count])
+  
     
 
     const onAdd = () => {
 
-        
+        const guardar = count
+        console.log(guardar);
         const message = `Agregaste ${count} producto`;
         //   Utilizo un condicional ternario (condicional) ? (true) : (false)
         count === 1 ? alert(message) : alert(`${message}s`);
+
+
+      
+    
+
       };
 
 
     return (
         <div>
-            <h4> Stock: { stock } </h4>
+            <h4> Stock: { stock - count } </h4>
             <Button  onClick= { addItem } variant="contained" color="primary">
             { count } 
             </Button>

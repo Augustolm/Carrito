@@ -12,7 +12,7 @@ import Item from '../items';
 function CategoriPeriferi() {
 
    
-    const micro = data.filter(o => o.categoria == 'perifericos')
+    const micro = data.filter(o => o.categoria === 'perifericos')
     console.log(micro)
     
 

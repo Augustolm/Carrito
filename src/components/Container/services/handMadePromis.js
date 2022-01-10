@@ -7,8 +7,8 @@ export const data = [
         "descripcion": "Este es el primer producto",
         "categoria":"Procesadores",
         "price": "73000",
-        "stock": "4",
-        "initials": "1"
+        "stock": "0",
+        "initials": "0"
     },
     {
         "id":2,
@@ -18,7 +18,7 @@ export const data = [
         "categoria":"Procesadores",
         "price": "58000",
         "stock": "10",
-        "initials": "1"
+        "initials": "0"
     },
     {
         "id":3,
@@ -27,8 +27,8 @@ export const data = [
         "descripcion": "Este es el tercer producto",
         "categoria":"Procesadores",
         "price": "22000",
-        "stock": "5",
-        "initials": "1"
+        "stock": "2",
+        "initials": "0"
     },
     {
         "id":4,
@@ -38,7 +38,7 @@ export const data = [
         "categoria":"Placas-de-video",
         "price": "280000",
         "stock": "3",
-        "initials": "1"
+        "initials": "0"
     },
     {
         "id":5,
@@ -48,7 +48,7 @@ export const data = [
         "categoria":"Placas-de-video",
         "price": "305000",
         "stock": "15",
-        "initials": "1"
+        "initials": "0"
     },
     {
         "id":6,
@@ -58,7 +58,7 @@ export const data = [
         "categoria":"Placas-de-video",
         "price": "320000",
         "stock": "1",
-        "initials": "1"
+        "initials": "0"
     },
     {
         "id":7,
@@ -68,7 +68,7 @@ export const data = [
         "categoria":"Placas-de-video",
         "price": "200000",
         "stock": "3",
-        "initials": "1"
+        "initials": "0"
        
     },
     {
@@ -79,7 +79,7 @@ export const data = [
         "categoria":"perifericos",
         "price": "2000",
         "stock": "4",
-        "initials": "1"
+        "initials": "0"
     },
     {
         "id":9,
@@ -89,7 +89,7 @@ export const data = [
         "categoria":"perifericos",
         "price": "6800",
         "stock": "4",
-        "initials": "1"
+        "initials": "0"
     },
     {
         "id":10,
@@ -99,7 +99,7 @@ export const data = [
         "categoria":"perifericos",
         "price": "3800",
         "stock": "4",
-        "initials": "1"
+        "initials": "0"
     }
 ]
 

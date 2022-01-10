@@ -15,7 +15,7 @@ import Item from '../items';
 function CategoriMicro( ) {
     
         
-    const micro = data.filter(o => o.categoria == 'Procesadores')
+    const micro = data.filter(o => o.categoria === 'Procesadores')
     console.log(micro)
         
     return (

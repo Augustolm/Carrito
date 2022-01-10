@@ -8,6 +8,7 @@ import Nosotros from './components/Container/Informacion/nosotros';
 import CategoriMicro from './components/Container/Categorias/categoriMicro';
 import CategoriPv from './components/Container/Categorias/categoriPv';
 import CategoriPeriferi from './components/Container/Categorias/categoriPeriferi';
+import { Carrito } from './components/Container/Carrito/carrito';
 
 
 
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="categoriMicro" element={ <CategoriMicro />} />
       <Route path="CategoriPv" element={ <CategoriPv />} />
       <Route path="CategoriPeriferi" element={ <CategoriPeriferi />} />
+      <Route path='Carrito' element= {<Carrito />} />
        
     </Routes>
   </React.StrictMode>

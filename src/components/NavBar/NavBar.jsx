@@ -18,7 +18,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MoreIcon from '@mui/icons-material/MoreVert';
 //import ItemCount from '../Container/itemCount';
 //import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Button } from '@material-ui/core';
+import { Button, ButtonGroup } from '@material-ui/core';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -82,6 +82,7 @@ export default function NavBar(   ) {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+    
   };
 
   const menuId = 'primary-search-account-menu';
@@ -184,30 +185,34 @@ export default function NavBar(   ) {
           </Search>
           
           <Button variant="contained" color="primary" >
-                <Link to="/nosotros" className="link">Nosotros</Link>
+          <Link to="/nosotros" className="link">Nosotros</Link>
+          </Button>
+          <ButtonGroup variant="contained" color="default" aria-label="">
             
+            
+                  <Button>
+                    <Link to='Carrito' className='"Link'>
+                    Carito
+                    
+                   
+                      <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                        <Badge badgeContent={ 5 } color="error">
+                          <ShoppingCartIcon />
+            
+                        </Badge>
+                        
+                      </IconButton>
+                    
+                      </Link>
                 </Button>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={ 0 } color="error">
-                <ShoppingCartIcon />
-              </Badge>
-            </IconButton>
-            
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-            
-          </Box>
+          
+          </ButtonGroup>
+
+
+
+
+
+        
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -217,6 +222,7 @@ export default function NavBar(   ) {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
+              
               <MoreIcon />
             </IconButton>
           </Box>

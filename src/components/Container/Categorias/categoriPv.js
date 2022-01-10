@@ -12,7 +12,7 @@ import Item from '../items';
 function CategoriPv() {
 
            
-    const micro = data.filter(o => o.categoria == 'Placas-de-video')
+    const micro = data.filter(o => o.categoria === 'Placas-de-video')
     console.log(micro)
         
 
