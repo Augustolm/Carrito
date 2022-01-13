@@ -60,7 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar(   ) {
+export default function NavBar( {cantidadCompra}  ) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -196,7 +196,7 @@ export default function NavBar(   ) {
                     
                    
                       <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                        <Badge badgeContent={ 5 } color="error">
+                        <Badge badgeContent={ cantidadCompra } color="error">
                           <ShoppingCartIcon />
             
                         </Badge>
@@ -207,9 +207,6 @@ export default function NavBar(   ) {
                 </Button>
           
           </ButtonGroup>
-
-
-
 
 
         

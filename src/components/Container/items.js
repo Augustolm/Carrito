@@ -1,10 +1,11 @@
 import { Paper } from "@mui/material"
+
 import { Link } from "react-router-dom"
 import ItemCount from "./itemCount"
 
 const Item = ({descripcion, price, stock, title, initials, image, id})=> {
 
-   
+  
   
     return(
 
@@ -22,7 +23,7 @@ const Item = ({descripcion, price, stock, title, initials, image, id})=> {
                     <h2>$ {price}</h2>
                     <p>{descripcion}</p>
                     </Link>
-                    <ItemCount stock={stock} initials={initials} id={id}/>
+                    <ItemCount stock={stock} initials={initials} id={id} image={image} title={title} price={price} descripcion={descripcion} />
                     
                     </Paper>
                 </div>)
@@ -36,7 +37,7 @@ const Item = ({descripcion, price, stock, title, initials, image, id})=> {
                     <h2>{price}</h2>
                     <p>SIN STOCK</p>
                     </Link>
-                    <ItemCount stock={stock} initials={initials} id={id}/>
+                    <ItemCount stock={stock} initials={initials} id={id}  />
                     
                     </Paper>
                 </div>)

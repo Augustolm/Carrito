@@ -1,9 +1,9 @@
 
-import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemlistContainer from './components/Container/ItemListContainer'
 import { Link } from 'react-router-dom';
+import CartsContext, {carts, compra,  setCompra } from './components/Container/Provider/Cantidadcart';
 
 
 
@@ -11,12 +11,18 @@ import { Link } from 'react-router-dom';
 
 
 function App() {
+ 
+  //const {carts} = CustomHook()
+
   return (
     
-     <div className="App"  >
+
+    <div className="App"  >
 
 
-      <NavBar   />
+      <CartsContext.Provider value={carts, compra,  setCompra} >
+
+      <NavBar  cantidadCompra={carts} />
 
      
       <ItemlistContainer  greeting = 'Bienvenidos a tu tienda Online' />
@@ -26,7 +32,7 @@ function App() {
       <Link to = "/nosotros">Nosotros</Link>
       
  
-     
+      </CartsContext.Provider>
       
 
     </div>
