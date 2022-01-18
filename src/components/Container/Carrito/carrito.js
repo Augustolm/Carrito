@@ -27,11 +27,10 @@ export const Carrito = () => {
    
        const handlDelete = (id) => {
           
-          const filterdelet = compra.filter(filt => filt.id !== id)
-          
+          const filterdelet = stet.filter(filt => filt.id !== id)
+          console.log(compra);
           setstet(filterdelet)
-        console.log(id);
-        
+       
         console.log(filterdelet);
         
         }
