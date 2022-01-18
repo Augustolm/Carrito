@@ -1,34 +1,58 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import { Box, Button} from '@material-ui/core';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom";
-import { data } from '../services/handMadePromis';
+
 import { Grid } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import {  compra  } from '../Provider/Cantidadcart';
 
 
 export const Carrito = () => {
 
+ 
 
+
+    //en caso de generar el json por medio de localstorage
+
+    const result1 = compra.filter(x => x.id !== 0 || x.estate === true );
+
+    const [stet, setstet] = useState(result1)
+
+  
+  
+    //const init = JSON.parse(localStorage.getItem('Cantaidad'));
+     
     
-    
-    const init = JSON.parse(localStorage.getItem('Cantaidad'));
-    
-    
-    
-    
-       const handlDelete = (e) => {
-            e.preventDefault();
-            localStorage.removeItem('Cantaidad')
-        console.log(e);
+   
+       const handlDelete = (id) => {
+          
+          const filterdelet = compra.filter(filt => filt.id !== id)
+          
+          setstet(filterdelet)
+        console.log(id);
+        
+        console.log(filterdelet);
+        
         }
     
+    // const carrito = data.filter(o => o.id === result1.id)
+
+    //     console.log(carrito);
+
+     const tem = stet.map( t =>  t.price)
+     
+
+       // console.log('este es el precio',tem);
+    let result = 0;
+
+    for(let i = 0 ; i < tem.length; i++)
+    {
+        result += parseInt(tem[i])
+    }
 
 
-    const carrito = data.filter(o => o.id === init.id)
-    const tem = carrito.map( t =>  t.price)
-    const result = parseInt(tem) * init.local
+
     
 
 
@@ -39,8 +63,8 @@ export const Carrito = () => {
                         
                                     <Grid container>
                                             {
-                                                carrito.map( p => {
-                                                    console.log(p);
+                                                stet.map( p => {
+                                                   
                                                     return(
                                                         <Grid item xs={3.5} >
                                                             <Box border={2} margin={3}>
@@ -48,10 +72,11 @@ export const Carrito = () => {
                                                             <h2>{p.title}</h2>
                                                             <img src={p.image} className="imagen" alt = 'imagen'></img>
                                                             <hr  />
-                                                            <h3> ${p.price} X {init.local}</h3>
-                                                            <Button variant="contained" color="primary">Comprar</Button>
+                                                            <h3>Cantidad: {p.cantidad}</h3>
+                                                            <h3> ${p.price}</h3>
+                                                            
                                                             <Button variant="outlined" color="secondary" startIcon={<DeleteIcon />} 
-                                                                onClick={handlDelete}
+                                                                onClick={() => handlDelete(p.id)}
                                                             >Eliminar</Button>
                                                         </Box>
                                                         </Grid>
@@ -62,18 +87,22 @@ export const Carrito = () => {
 
                               
            <hr  />
-           <h1>Total a pagar: ${result}</h1>
+                 <h1>Total a pagar: ${result}</h1>
+
+
+
 
 
            
             
 
 
-
-
+            <Button variant="contained" color="primary">Finalizar compra</Button>
+            <hr  />
             <Button variant="contained" color="primary" ><ArrowBackIcon/>
             <Link to="/" className="link">Regresar</Link>
             </Button>
+           
 
             
         </div>

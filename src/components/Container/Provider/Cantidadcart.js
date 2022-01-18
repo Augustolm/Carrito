@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React  from 'react'
 
 
 
@@ -12,14 +12,19 @@ import React, { useState } from 'react'
 // return {carts, compra,  setCompra};
 // }
 
+
+
+
 let carts = 0
 
-let compra = [{}]
+let compra = []
 
 
   
 // const setCompra = obj => compra = {...obj}
 const setCompra = obj => (compra.push(obj))
+
+
 
 const CartsContext = React.createContext(null);
 

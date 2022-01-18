@@ -1,3 +1,7 @@
+
+
+
+
 export const data = [
 
     {
@@ -108,6 +112,5 @@ const getProducts = new Promise((resolve)=>{
         resolve(data)
     }, 2000);
 })
-
 
 export default getProducts

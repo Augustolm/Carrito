@@ -1,13 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button } from '@material-ui/core';
-import { carts, compra,  setCompra  } from './Provider/Cantidadcart';
+import {  setCompra  } from './Provider/Cantidadcart';
 
+//carts se utilizara para mostrar las cantidade de compras en el carrito
+//compras tendra los resultados de visualizacion en product.js
 
 
 
 const ItemCount = ( {stock, initials, id, image, title, price, descripcion} ) => {
     
+    
+
+  
+
     
     
 
@@ -42,61 +48,44 @@ const ItemCount = ( {stock, initials, id, image, title, price, descripcion} ) =>
     }, [local, id])
     
     const [compratest, setCompratest] = useState(false)
+
+
+    
+
+
+ 
     const handleCompra = e =>{
-       
-       
-       
-       
-       
+        const sumTotal = price * count
+
+
+        console.log(count);
+        count == 0 ? 
+        console.log('aca no') 
+        
+        : 
+             
         setCompra(
-             [{
+             {
             id: id,
             name: title,
-            price: price,
+            price: sumTotal,
             descripcion: descripcion,
-            image: image
-            
-             }]);
-        
-        // compra.find((item) => item.id === id));
-
-        //setCompra -----------------testing--------
-        // setCompra(!compra[0] ?
-        //    [ {
-        //    id: id,
-        //    name: title,
-        //    price: price,
-        //    descripcion: descripcion,
-        //    image: image
-           
-        //     }]
-        //     : compra.find((item) => item.id === id)? 
-        //     compra
-        //     :
-        //    [ {
-        //     id: id,
-        //     name: title,
-        //     price: price,
-        //     descripcion: descripcion,
-        //     image: image
-            
-        //      },...compra]);
-       
-        console.log('aca va compra', compra);
-       
+            image: image,
+            cantidad: count,
+            estate: true
+             });
+     
         setCompratest(!compratest)
         
-        //console.log(compra);
     }
         
     const onAdd = () => {
-               
-       
-        
+
+    
         
         handleCompra()
         //   Utilizo un condicional ternario (condicional) ? (true) : (false)
-        count === 0 ? console.log('no se agrega produto')  :  setLocal(count);
+        count === 0 ? alert('No puede agregar 0 productos')  :  setLocal(count);
         
     };
     

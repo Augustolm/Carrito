@@ -10,28 +10,23 @@ import CartsContext, {carts, compra,  setCompra } from './components/Container/P
 
 
 
+
 function App() {
  
   //const {carts} = CustomHook()
+
 
   return (
     
 
     <div className="App"  >
 
-
-      <CartsContext.Provider value={carts, compra,  setCompra} >
-
-      <NavBar  cantidadCompra={carts} />
-
      
+      <CartsContext.Provider value={carts, compra,  setCompra} >
+      <NavBar  cantidadCompra={carts} />
       <ItemlistContainer  greeting = 'Bienvenidos a tu tienda Online' />
-      
-      
-      
       <Link to = "/nosotros">Nosotros</Link>
-      
- 
+      <Link to = "ListCarrito">Lista Producto</Link>
       </CartsContext.Provider>
       
 
