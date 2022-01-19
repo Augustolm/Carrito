@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useEffect, useState }  from 'react'
 import { Box, Button} from '@material-ui/core';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom";
@@ -10,15 +10,15 @@ import {  compra  } from '../Provider/Cantidadcart';
 
 export const Carrito = () => {
 
+   //en caso de generar el json por medio de localstorage
+   const result1 = compra.filter(x => x.id !== 0 || x.estate === true);
+   const result2 = new Set(result1)
+   let resultado = [...result2]
+    console.log(resultado);
+  // console.log(result1);
+   const [stet, setStet] = useState(resultado)// stet imprime 
+
  
-
-
-    //en caso de generar el json por medio de localstorage
-
-    const result1 = compra.filter(x => x.id !== 0 || x.estate === true );
-
-    const [stet, setstet] = useState(result1)
-
   
   
     //const init = JSON.parse(localStorage.getItem('Cantaidad'));
@@ -29,7 +29,7 @@ export const Carrito = () => {
           
           const filterdelet = stet.filter(filt => filt.id !== id)
           console.log(compra);
-          setstet(filterdelet)
+          setStet(filterdelet)
        
         console.log(filterdelet);
         
