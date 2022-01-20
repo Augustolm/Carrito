@@ -3,16 +3,18 @@ import { Box, Button, Grid } from '@material-ui/core';
 import { Link } from "react-router-dom";
 import NavBar from "../../NavBar/NavBar";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { data } from '../services/handMadePromis';
-import Item from '../items';
 
+import Item from '../items';
+import { CargaFirebase } from '../Provider/CargaFirebase';
 
 
 
 function CategoriPeriferi() {
 
+
+    let micros = CargaFirebase()
    
-    const micro = data.filter(o => o.categoria === 'perifericos')
+    const micro = micros.filter(o => o.categoria === 'perifericos')
     console.log(micro)
     
 

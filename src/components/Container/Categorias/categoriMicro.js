@@ -5,6 +5,8 @@ import NavBar from "../../NavBar/NavBar";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { data } from '../services/handMadePromis';
 import Item from '../items';
+import { carro } from '../Provider/Cantidadcart';
+import { CargaFirebase } from '../Provider/CargaFirebase';
 
 
 
@@ -12,12 +14,19 @@ import Item from '../items';
 
 
 
-function CategoriMicro( ) {
+
+
+
+
+
+function CategoriMicro() {
     
-        
-    const micro = data.filter(o => o.categoria === 'Procesadores')
-    console.log(micro)
-        
+    let micros = CargaFirebase()
+  
+          
+    const micro = micros.filter(o => o.categoria === "Procesadores")
+
+    
     return (
         <>
 

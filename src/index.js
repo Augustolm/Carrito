@@ -9,40 +9,16 @@ import CategoriMicro from './components/Container/Categorias/categoriMicro';
 import CategoriPv from './components/Container/Categorias/categoriPv';
 import CategoriPeriferi from './components/Container/Categorias/categoriPeriferi';
 import { Carrito } from './components/Container/Carrito/carrito';
-
-
-
-
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import CartsContext, {carts, compra,  setCompra } from './components/Container/Provider/Cantidadcart';
 import { ListProduct } from './components/Container/services/listProduct';
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCv7EnuV26ZyhTqjS_KzEtnnkjGH_VnAwA",
-  authDomain: "carrito-miproyecto.firebaseapp.com",
-  projectId: "carrito-miproyecto",
-  storageBucket: "carrito-miproyecto.appspot.com",
-  messagingSenderId: "437420411590",
-  appId: "1:437420411590:web:ac4cc4cb506f4c15dae5c7",
-  measurementId: "G-HTEZ1S8H68"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(app);
 
 
 
 
 ReactDOM.render(
   <BrowserRouter>
+ <CartsContext.Provider value={carts, compra,  setCompra} >
   <React.StrictMode>
     <Routes>
 
@@ -54,12 +30,10 @@ ReactDOM.render(
       <Route path="CategoriPeriferi" element={ <CategoriPeriferi />} />
       <Route path='Carrito' element= {<Carrito />} />
       <Route path='ListCarrito' element= {<ListProduct />} />
-      
-   
-      
        
     </Routes>
   </React.StrictMode>
+  </CartsContext.Provider>
   </BrowserRouter>,
   document.getElementById('root')
 );

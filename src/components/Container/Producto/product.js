@@ -1,11 +1,12 @@
-import React from 'react';
-//import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from "react-router-dom";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Button } from '@material-ui/core';
+import { Button  } from '@material-ui/core';
 import NavBar from "../../NavBar/NavBar"
-import { data } from '../services/handMadePromis';
 import { Box } from '@mui/material';
+import { CargaFirebase } from '../Provider/CargaFirebase';
+
+
 
 
 
@@ -14,47 +15,21 @@ import { Box } from '@mui/material';
 const Product = () => {
 
 
-
+      
+    let  nuevaData = CargaFirebase()
     const {postId} = useParams();
-    console.log(postId)
 
+      
+    const p = nuevaData.find(o => o.id == postId)
 
-
-    
-
-    const p = data.find(o => o.id == postId)
-    
-    console.log(p)
-
-    
-//      const [products, setProducts] = useState()
-   
-//    console.log(products)
-//     //console.log('Los producots en el hook', products)
-//     useEffect(() => {
-        
-//         data.then(res => {
-//             setProducts(res)
-            
-//         }).catch(err => alert('Algo no salio como se esperaba', err))
-//     },[]);
-//     const p = products.find(products => products.id == postId);
-
-//     console.log(p)
-    
+ 
+ 
 
     return(
         
         <div>
              <NavBar />
          
-              
-           
-                
-           
-   
- 
-                
                      <Box border={2}  sx={{
                                             display: 'flex',
                                             justifyContent: 'center',

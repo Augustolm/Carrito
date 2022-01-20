@@ -5,14 +5,16 @@ import NavBar from "../../NavBar/NavBar";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { data } from '../services/handMadePromis';
 import Item from '../items';
-
+import { CargaFirebase } from '../Provider/CargaFirebase';
 
 
 
 function CategoriPv() {
 
-           
-    const micro = data.filter(o => o.categoria === 'Placas-de-video')
+
+    let micros = CargaFirebase()
+
+    const micro = micros.filter(o => o.categoria === 'Placas-de-video')
     console.log(micro)
         
 
