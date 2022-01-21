@@ -14,11 +14,11 @@ export const CargaFirebase = () => {
         return {...el.data(), id: el.id}
     }))
     
-  console.log('Sin map',queryProduct.docs);
+  //console.log('Sin map',queryProduct.docs);
     
 }
 
-console.log('eLuego del map',carritoproduct);
+//console.log('eLuego del map',carritoproduct);
 
 useEffect(() => {
  
