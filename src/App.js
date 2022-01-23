@@ -26,6 +26,30 @@ function App() {
 //   }
 
 
+const sendOrder = async () =>  {
+
+  const neworder = {
+      buyer: {name: 'Luciano', lastname: 'Mosettig', phone: '1515151515', email: 'test@test.com' },
+      item: {
+        image:"https://images-na.ssl-images-amazon.com/images/I/616VM20%2BAzL.__AC_SY300_SX300_QL70_ML2_.jpg",
+        title:"Ryzen 5900x",
+        descripcion: "Este es el primer producto",
+        categoria:"Procesadores",
+        price: "73000",
+        stock: "0",
+        initials: "0"
+      },
+      total: 7300
+   };
+
+  const {id} = await  addDoc(collection(db, 'NewOrder'), neworder);
+
+ 
+
+  console.log('Usuario! esta es tu orderId nueva', id);
+}
+
+
   return (
     
 
@@ -37,6 +61,9 @@ function App() {
       {/* <button onClick={arrayUpload}>
         Subir
       </button> */}
+      <button onClick={sendOrder}>
+        Cargar Nuevaorder
+      </button> 
       <ItemlistContainer  greeting = 'Bienvenidos a tu tienda Online' />
       <Link to = "/nosotros">Nosotros</Link>
       <Link to = "ListCarrito">Lista Producto</Link>
