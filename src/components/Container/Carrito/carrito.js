@@ -82,17 +82,14 @@ const style = {
         
         
         const handleSubmit = (e) =>{
-
             e.preventDefault();
-
             console.log (formValues)
         }
+        const fecha = new Date();
         
-       
 
-
-
-
+        const [orden, setOrden ] = useState();
+        
         const sendOrder = async () =>  {
             
             const neworder = {
@@ -100,30 +97,22 @@ const style = {
                 item: {
                     stet
                 },
-            total: result
-         };
-      
-        const {id} = await  addDoc(collection(db, 'NewOrder'), neworder);
-      
-       
-      
-        console.log('Usuario! esta es tu orderId nueva', id);
-      }
+                Fecha: fecha, 
+                total: result
+            };
+            
+        
 
-
+            
+            const {id} = await  addDoc(collection(db, 'NewOrder'), neworder);
+            
+            console.log('Usuario! esta es tu orderId nueva', id);
+            setOrden(id)
+            
+        }
+        
      
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
     return (
         <div>
@@ -158,11 +147,8 @@ const style = {
            <hr  />
                  <h1>Total a pagar: ${result}</h1>
                                             
-                                            
-
 
             <hr  />
-            
 
                                         
             <Button variant="contained" color="primary" onClick={handleOpen}>Finalizar compra</Button>
@@ -229,10 +215,11 @@ const style = {
                     Total a pagar ${result}
                 </Typography>
 
-                    <button onClick={sendOrder}>
-                    Recibir numero de gestion
-                    </button>  
-                    <h2>aca va el id</h2>
+                    <Button variant="contained" onClick={sendOrder}>
+                         
+                    Solicitar numero de gestion 
+                    </Button>  
+                    <h2>{orden}</h2>
                                           
                 </Box>
             </Modal>

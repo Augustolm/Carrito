@@ -1,3 +1,46 @@
+#**
+
+## Tienda online de productos para su PC
+
+**
+
+Encontraremos una tienda online donde podremos visualizar una  variedad amplia de objetos para tu pc.
+Con una visual practica que muestra en un listado los productos  con sus respectivos montos y  podrá seleccionar y armar su carrito a su gusto. 
+
+**
+## Pre- requisitos
+
+este Ecommers  es compatible con todos los **navegadores** populares, incluyendo Internet Explorer 9 y **versiones** posteriores, aunque se necesitan algunos polyfills para **navegadores** más antiguos como IE 9 e IE 10.
+
+## Abrir un archivo
+
+Puede abrir un archivo desde ** GitHub**  utilizando este linck https://github.com/Augustolm/Carrito.git
+
+## Autor
+
+ - Mosettig Augusto Luciano
+
+## Licencias
+
+Actualmente este proyecto no cuenta con licencias!!
+
+## Agradecimiento 
+
+Les agradezco por la voluntad y el esmero que le pusieron no solo a los tutores sino al profesor,
+excelente calidad y profesionalidad.  
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
