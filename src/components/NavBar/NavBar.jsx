@@ -12,12 +12,9 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-//import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-//import ItemCount from '../Container/itemCount';
-//import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Button, ButtonGroup } from '@material-ui/core';
 
 const Search = styled('div')(({ theme }) => ({
@@ -66,6 +63,15 @@ export default function NavBar( {cantidadCompra}  ) {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+
+  let navigate = useNavigate();
+
+  function handleClickCarro() {
+    navigate('/Carrito')
+  }
+ 
+
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -190,8 +196,9 @@ export default function NavBar( {cantidadCompra}  ) {
           <ButtonGroup variant="contained" color="default" aria-label="">
             
             
-                  <Button>
-                    <Link to='Carrito' className='"Link'>
+                  <Button onClick={handleClickCarro}>
+                  
+              
                     Carito
                     
                    
@@ -203,7 +210,7 @@ export default function NavBar( {cantidadCompra}  ) {
                         
                       </IconButton>
                     
-                      </Link>
+                      
                 </Button>
           
           </ButtonGroup>

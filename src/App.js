@@ -61,13 +61,11 @@ const sendOrder = async () =>  {
       {/* <button onClick={arrayUpload}>
         Subir
       </button> */}
-      <button onClick={sendOrder}>
+      {/* <button onClick={sendOrder}>
         Cargar Nuevaorder
-      </button> 
+      </button>  */}
       <ItemlistContainer  greeting = 'Bienvenidos a tu tienda Online' />
-      <Link to = "/nosotros">Nosotros</Link>
-      <Link to = "ListCarrito">Lista Producto</Link>
-     
+
       
 
     </div>
@@ -79,4 +77,3 @@ const sendOrder = async () =>  {
 
 export default App;
 
-//rafcp

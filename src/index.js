@@ -28,7 +28,7 @@ ReactDOM.render(
       <Route path="categoriMicro" element={ <CategoriMicro />} />
       <Route path="CategoriPv" element={ <CategoriPv />} />
       <Route path="CategoriPeriferi" element={ <CategoriPeriferi />} />
-      <Route path='Carrito' element= {<Carrito />} />
+      <Route path='/Carrito' element= {<Carrito />} />
       <Route path='ListCarrito' element= {<ListProduct />} />
        
     </Routes>

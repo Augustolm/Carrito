@@ -1,28 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState }  from 'react'
 import { Box, Button, Grid } from '@material-ui/core';
 import { Link } from "react-router-dom";
 import NavBar from "../../NavBar/NavBar";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { data } from '../services/handMadePromis';
 import Item from '../items';
 import { CargaFirebase } from '../Provider/CargaFirebase';
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 function CategoriPv() {
 
+    const [loading, setLoading] = useState(false);
 
-    let micros = CargaFirebase()
 
-    const micro = micros.filter(o => o.categoria === 'Placas-de-video')
-    console.log(micro)
-        
+    let placaVid = CargaFirebase()
+
+    
+    
+    
+    useEffect(() => {
+        if (placaVid[0] ) {
+            setLoading(true)
+        }else {
+            setLoading(false)
+        }
+    }, [placaVid]);
+    
+    const micro = placaVid.filter(o => o.categoria === 'Placas-de-video')
+
+
 
     return (
         <div>
             <NavBar />
            
-         
+            {loading ?
 
        
 
@@ -57,11 +69,24 @@ function CategoriPv() {
             </Grid>
             </div>
 
+               :
+              <Box 
+              display="flex" 
+              alignItems="center"
+              justifyContent="center"
+              marginTop={20}
+               >
+                <CircularProgress  />
+             </Box>
+                }
+
 
             <Button variant="contained" color="primary" ><ArrowBackIcon/>
             <Link to="/" className="link">Regresar</Link>
             </Button>
         </div>
+            
+
     )
 }
 

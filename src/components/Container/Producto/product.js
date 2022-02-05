@@ -8,42 +8,24 @@ import { CargaFirebase } from '../Provider/CargaFirebase';
 import CircularProgress from '@mui/material/CircularProgress';
 
 
-
-
-
-
 const Product = () => {
-
 
   const [loading, setLoading] = useState(false);
 
   let nuevaData = CargaFirebase()
-  console.log('esto es nueva data',nuevaData);
 
   useEffect(() => {
-   
     if (nuevaData[0] ) {
         setLoading(true)
-
     }else {
-
         setLoading(false)
-
     }
-
-   
 }, [nuevaData]);
-  
-console.log('loading',loading);
-      
+    
     const {postId} = useParams();
 
- 
-    console.log('esto es postid',postId);
-      
     const p = nuevaData.find(o => o.id == postId)
 
-    console.log('p',p);
  
 
     return(
@@ -95,9 +77,14 @@ console.log('loading',loading);
                     </div>
                 
                 :
-                
-                  <CircularProgress />
-                
+                <Box 
+                display="flex" 
+                alignItems="center"
+                justifyContent="center"
+                marginTop={20}
+                 >
+                  <CircularProgress  />
+               </Box>
                 }
         
         </>

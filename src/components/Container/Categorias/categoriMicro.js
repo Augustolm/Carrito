@@ -1,28 +1,27 @@
-
+import React, { useEffect, useState } from 'react'
 import { Box, Button, Grid } from '@material-ui/core';
 import { Link } from "react-router-dom";
 import NavBar from "../../NavBar/NavBar";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { data } from '../services/handMadePromis';
 import Item from '../items';
-import { carro } from '../Provider/Cantidadcart';
 import { CargaFirebase } from '../Provider/CargaFirebase';
-
-
-
-
-
-
-
-
-
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 function CategoriMicro() {
+
+    const [loading, setLoading] = useState(false);
     
     let micros = CargaFirebase()
   
+    useEffect(() => {
+        if (micros[0] ) {
+            setLoading(true)
+        }else {
+            setLoading(false)
+        }
+    }, [micros]);
+    
           
     const micro = micros.filter(o => o.categoria === "Procesadores")
 
@@ -32,7 +31,7 @@ function CategoriMicro() {
 
             <NavBar />
            
-
+            {loading ?
             <div>
                <Grid container>
               {
@@ -62,7 +61,16 @@ function CategoriMicro() {
             </Grid>
             </div>
 
-
+              :
+              <Box 
+              display="flex" 
+              alignItems="center"
+              justifyContent="center"
+              marginTop={20}
+               >
+                <CircularProgress  />
+             </Box>
+                }
             
             
             <Button variant="contained" color="primary" ><ArrowBackIcon/>
